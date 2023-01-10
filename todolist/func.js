@@ -1,5 +1,5 @@
 // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
+var myNodelist = document.getElementsByTagName("myUL");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
@@ -22,7 +22,7 @@ for (i = 0; i < close.length; i++) {
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
+  if (ev.target.tagName === 'myUL') {
     ev.target.classList.toggle('checked');
   }
 }, false);
@@ -30,15 +30,25 @@ list.addEventListener('click', function(ev) {
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
-  var inputValue = document.getElementById("task").value;
+  var inputValue = document.getElementById("myInput").value;
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("list").appendChild(li);
-  }
-  document.getElementById("task").value = "";
+
+//   if (inputValue === '') {
+//     alert("Bu alanı boş bırakamazsınız!");
+//   } else {
+//     document.getElementById("myUL").appendChild(li);
+//   }
+
+if ( inputValue === "" ) {
+    $('.error').toast("show")
+    
+} else {
+    let myInput = document.querySelector("#myInput")
+    document.getElementById("myUL").appendChild(li);
+    $('.success').toast("show")
+}
+  document.getElementById("myInput").value = "";
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -53,3 +63,6 @@ function newElement() {
     }
   }
 }
+
+
+//li->myUL, task->myInput, liDOM->li
