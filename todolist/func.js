@@ -1,4 +1,4 @@
-// Blose butona oluşturma ve listeye öğe ekleme kısmı
+// Close butona oluşturma ve listeye öğe ekleme kısmı
 var myNodelist = document.getElementsByTagName("myUL");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -19,7 +19,7 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-// Add a "checked" symbol when clicking on a list item
+// Liste öğesine tıklandığında check eder
 var list = document.querySelector("ul");
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === "myInput") {
@@ -64,6 +64,3 @@ if ( inputValue === "" ) {
     }
   }
 }
-
-
-//li->myUL, task->myInput, liDOM->li
