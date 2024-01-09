@@ -19,4 +19,4 @@ function zaman() {
     // burda oluşturduğumuz değerleri ekrana yazdırıyoruz
     iceaktarma.innerHTML = saat + ":" + dakika + ":" + saniye + " " + gunler[gun.getDay()];
 }
-let simdi = setInterval(zaman, 100); 
+setInterval(zaman, 100); 
